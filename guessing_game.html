@@ -10,12 +10,13 @@
 
       function click() {
         clicks++;
-        document.getElementById("userGuess").innerHTML = clicks;
+        document.getElementById("guessNum").innerHTML = clicks;
       }
 
       function guess() {
         var turnsEl = document.getElementById("clicks");
         var userGuess = Number(document.getElementById("userGuess").value);
+        click();
 
         if (userGuess === randomNum) {
           window.alert("You win!")
@@ -26,7 +27,7 @@
   </head>
   <body>
     <p>Guess my number between 1-10</p>
-    <p>Guesses made: <span id="turnsEl"></span></p>
+    <p>Guesses made: <span id="guessNum"></span></p>
     <form onsubmit="guess(); return false;">
       <input type="text" name="guesses" id="userGuess">
       <input type="submit" value="Guess">
