@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Guessing Game</title>
+    <meta charset="utf-8">
+    <script>
+      var randomNum = Math.floor(Math.random() * 10) + 1;
+      var clicks = 0;
+      console.log(randomNum);
+
+      function click() {
+        clicks++;
+        document.getElementById("userGuess").innerHTML = clicks;
+      }
+
+      function guess() {
+        var turnsEl = document.getElementById("clicks");
+        var userGuess = Number(document.getElementById("userGuess").value);
+
+        if (userGuess === randomNum) {
+          window.alert("You win!")
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+    <p>Guess my number between 1-10</p>
+    <p>Guesses made: <span id="turnsEl"></span></p>
+    <form onsubmit="guess(); return false;">
+      <input type="text" name="guesses" id="userGuess">
+      <input type="submit" value="Guess">
+    </form>
+  </body>
+</html>
