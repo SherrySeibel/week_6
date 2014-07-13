@@ -1,8 +1,8 @@
 $(function() {
-$("form").submit(function() {
-  calculate();
-  return false;
-});
+  $("form").submit(function() {
+    calculate();
+    return false;
+  });
 });
 
 function calculate() {
